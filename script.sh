@@ -9,7 +9,7 @@ gzip -dc wordnet.json.gz | jq '.. | select(type != "null") | {word: .word?, glos
 echo "Running sed"
 
 echo "Deleting first 8 lines"
-sed -i '8d' wordsonly.json
+sed -i '1,8d' wordsonly.json
 
 echo "Adding [ at start of json"
 sed -i '1i[\n' wordsonly.json
